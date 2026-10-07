@@ -3,7 +3,7 @@
 
 p_hp = 50
 b_hp = 50
-SECRET_CODE = "ADMIN_ACCESS_2025"
+#Removing SECRET_CODE to close backdoor vulnerability
 MAX_HP = 50
 
 def attack():
@@ -38,11 +38,14 @@ while p_hp > 0 and b_hp > 0:
     else:
         print("Invalid choice! Please choose 'a', 'h', or 'c'.")
 
+    # Changing victory output to include 'You got the last hit' for clarity
     if b_hp <= 0:
-        print("Victory!")
+        print("You got the last hit! Victory!")
         break
 
     if b_hp > 0:
         p_hp -= 10
+        #Adding in output clarification of when the boss attacks
+        print(f"The Boss chose to attack! It dealt 10 damage! Player healh went down to {p_hp}!")
 
 print("Game Over!")
